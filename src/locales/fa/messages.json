@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "افزودن ارائه دهنده"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "به ابسیدین اضافه کنید"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "محتوای وب را در قالبی خصوصی و بادوام ذخیره کنید که بتوانید به صورت آفلاین به آن دسترسی داشته باشید. پسوند رسمی مرورگر برای ابسیدین."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "متن کپی نشد"

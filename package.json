@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-clipper",
+	"name": "affine-clipper",
 	"version": "0.10.9",
-	"description": "Official web clipper for Obsidian.",
+	"description": "Official web clipper for AFFiNE.",
 	"scripts": {
 		"dev:chrome": "webpack --watch --env BROWSER=chrome --mode development",
 		"dev:firefox": "webpack --watch --env BROWSER=firefox --mode development",

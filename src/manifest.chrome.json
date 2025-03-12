@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"default_locale": "en",
-	"name": "Obsidian Web Clipper",
+	"name": "AFFiNE Web Clipper",
 	"homepage_url": "https://obsidian.md/",
 	"version": "0.10.9",
 	"description": "Save and highlight web pages in a private and durable format that you can access offline. The official extension for Obsidian.",
@@ -30,9 +30,9 @@
 		"open_in_tab": true
 	},
 	"icons": {
-		"16": "icons/icon16.png",
-		"48": "icons/icon48.png",
-		"128": "icons/icon128.png"
+		"16": "icons/favicon.png",
+		"48": "icons/favicon.png",
+		"128": "icons/favicon.png"
 	},
 	"background": {
 		"service_worker": "background.js",

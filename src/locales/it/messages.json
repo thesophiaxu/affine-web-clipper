@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Aggiungi fornitore"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Aggiungi a Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Salva contenuti dal web in un formato privato e duraturo che puoi accedere offline. L'estensione del browser ufficiale per Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Impossibile copiare il testo"

@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "제공자 추가"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Obsidian에 추가하기"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "웹 콘텐츠를 저장하여 오프라인에서도 접근할 수 있는 개인적이고 내구성 있는 형식으로 보관하세요. Obsidian의 공식 브라우저 확장 프로그램입니다."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "텍스트를 복사하지 못했습니다"

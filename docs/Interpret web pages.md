@@ -3,14 +3,14 @@ permalink: web-clipper/interpreter
 aliases:
   - Interpreter
 ---
-Interpreter is a [[Introduction to Obsidian Web Clipper|Web Clipper]] feature that lets you interact with web pages using natural language. Interpreter helps you capture and modify data that you want to save to Obsidian. For example:
+Interpreter is a [[Introduction to AFFiNE Web Clipper|Web Clipper]] feature that lets you interact with web pages using natural language. Interpreter helps you capture and modify data that you want to save to Obsidian. For example:
 
 - Extract specific text fragments.
 - Summarize or explain information.
 - Convert text from one format to another.
 - Translate text to a different language.
 
-Interpreter leverages language models to process information on a web page, and return results using [[Variables]] that you can add to your [[Obsidian Web Clipper/Templates|Web Clipper Templates]].
+Interpreter leverages language models to process information on a web page, and return results using [[Variables]] that you can add to your [[AFFiNE Web Clipper/Templates|Web Clipper Templates]].
 
 ![[web-clipper-interpreter-demo.mp4#interface]]
 
@@ -31,7 +31,7 @@ Interpreter works with almost any language model provider, including options tha
 1. Go to the **Interpreter** section in Web Clipper settings.
 2. Toggle on **Enable Interpreter**.
 3. Configure your provider and model, see [[Interpret web pages#Models|models]] section below.
-4. Add [[Variables|prompt variables]] to your [[Obsidian Web Clipper/Templates|templates]].
+4. Add [[Variables|prompt variables]] to your [[AFFiNE Web Clipper/Templates|templates]].
 5. If your template includes prompt variables, the Interpreter section will be visible when you [[Clip web pages|clip a page]]. Click **interpret** to process the prompt variables.
 
 ## How it works
@@ -48,7 +48,7 @@ The term *context* refers to the page data that Interpreter uses to process prom
 
 By default, Interpreter uses the entire page HTML as its context, however this can make prompts slower and more expensive than necessary.
 
-You can override the default context in Interpreter **Advanced settings** and define context per [[Obsidian Web Clipper/Templates|template]].
+You can override the default context in Interpreter **Advanced settings** and define context per [[AFFiNE Web Clipper/Templates|template]].
 
 To define a more targeted context use [[Variables#Selector variables|selector variables]] (or other variable types) to interpret a section of the page. For example, you could use the following selector variable in your template's Interpreter context:
 

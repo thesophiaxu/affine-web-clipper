@@ -32,7 +32,7 @@ export default class I18nAutomation {
 	private initializeChatHistory(targetLanguage: string) {
 		this.chatHistories[targetLanguage] = [{
 			role: "system",
-			content: `You are a professional translator for the Obsidian Web Clipper browser extension.
+			content: `You are a professional translator for the AFFiNE Web Clipper browser extension.
 
 About the extension:
 - It's a browser extension that helps users save web content to their Obsidian vault

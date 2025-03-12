@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "เพิ่มผู้ให้บริการ"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "เพิ่มไปยัง Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "บันทึกเนื้อหาจากเว็บในรูปแบบส่วนตัวและยั่งยืนที่คุณสามารถเข้าถึงได้แบบออฟไลน์ ส่วนขยายเบราว์เซอร์อย่างเป็นทางการสำหรับ Obsidian"
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "ไม่สามารถคัดลอกข้อความ"

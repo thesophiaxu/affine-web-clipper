@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Dodaj operatora"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Zapisz w Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Zapisuj treści z Internetu w prywatnym i bezpiecznym formacie, do którego masz dostęp offline. Oficjalne rozszerzenie przeglądarki dla Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Nie udało się skopiować tekstu"

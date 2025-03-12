@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "הוסף ספק"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "הוסף ל-Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "שמור תוכן מהאינטרנט בפורמט פרטי ובר-קיימא שניתן לגשת אליו במצב לא מקוון. הרחבת הדפדפן הרשמית של Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "נכשל בהעתקת טקסט"

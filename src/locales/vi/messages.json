@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Thêm nhà cung cấp"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Thêm vào Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Lưu nội dung từ web trong định dạng riêng tư và bền vững mà bạn có thể truy cập ngoại tuyến. Tiện ích mở rộng trình duyệt chính thức cho Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Không thể sao chép văn bản"

@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "\"プロバイダーを追加\""
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Obsidianに追加"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Webコンテンツをプライベートで永続的なオフラインアクセス可能な形式で保存します。Obsidianの公式ブラウザ拡張機能です。"
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "テキストのコピーに失敗しました"

@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Legg til leverandør"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Legg til i Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Lagre webinnhold i et privat og varig format som kan nås offline. Den offisielle nettleserutvidelsen for Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Kunne ikke kopiere tekst"

@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Додати провайдера"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Додати в Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Зберігайте веб-вміст у приватному та довговічному форматі, доступному офлайн. Офіційне браузерне розширення для Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Не вдалося скопіювати текст"

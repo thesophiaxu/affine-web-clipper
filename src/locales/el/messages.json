@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Προσθήκη παρόχου"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Προσθήκη στο Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Αποθηκεύστε περιεχόμενο από τον ιστό σε ιδιωτική και βιώσιμη μορφή στην οποία έχετε πρόσβαση εκτός σύνδεσης. Η επίσημη επέκταση περιηγητή για το Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Αποτυχία αντιγραφής κειμένου"

@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Adaugă furnizor"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Adaugă în Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Salvează conținut web într-un format privat și durabil care poate fi accesat offline. Extensia oficială de browser pentru Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Nu s-a putut copia textul"

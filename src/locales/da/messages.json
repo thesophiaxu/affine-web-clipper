@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Tilføj udbyder"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Tilføj til Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Gem webindhold i et privat og holdbart format, tilgængeligt offline. Den officielle browserudvidelse til Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Kunne ikke kopiere tekst"

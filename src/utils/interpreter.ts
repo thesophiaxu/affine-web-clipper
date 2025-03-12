@@ -136,7 +136,7 @@ export async function sendToLLM(promptContext: string, content: string, promptVa
 			headers = {
 				...headers,
 				'HTTP-Referer': 'https://obsidian.md/',
-				'X-Title': 'Obsidian Web Clipper',
+				'X-Title': 'AFFiNE Web Clipper',
 				'Authorization': `Bearer ${provider.apiKey}`
 			};
 		}

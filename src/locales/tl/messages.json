@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Magdagdag ng provider"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Idagdag sa Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "I-save ang web content sa pribado at pangmatagalang format, na maaaring ma-access offline. Ang opisyal na browser extension para sa Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Hindi makopya ang text"

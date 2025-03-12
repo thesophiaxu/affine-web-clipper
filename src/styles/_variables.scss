@@ -157,34 +157,15 @@
 	:root {
 		--background-modifier-cover: rgba(220, 220, 220, 0.4);
 
-		--color-accent-hsl:
-				var(--accent-h),
-				var(--accent-s),
-				var(--accent-l);
+		--color-accent-hsl: #1e96eb;
 
-		--color-accent:
-			hsl(
-				var(--accent-h),
-				var(--accent-s),
-				var(--accent-l));
+		--color-accent: #1e96eb;
 
-		--color-accent-1:
-			hsl(
-				calc(var(--accent-h) - 1),
-				calc(var(--accent-s) * 1.01),
-				calc(var(--accent-l) * 1.075));
+		--color-accent-1: #1e96eb;
 
-		--color-accent-2:
-			hsl(
-				calc(var(--accent-h) - 3),
-				calc(var(--accent-s) * 1.02),
-				calc(var(--accent-l) * 1.15));
+		--color-accent-2: #1e96eb;
 		
-		--color-accent-3:
-			hsl(
-				calc(var(--accent-h) + 3),
-				calc(var(--accent-s) * 0.96),
-				calc(var(--accent-l) * 0.85));
+		--color-accent-3: #1e96eb;
 
 		--color-base-00: #ffffff;
 		--color-base-05: #fcfcfc;

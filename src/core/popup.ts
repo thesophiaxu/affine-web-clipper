@@ -24,6 +24,7 @@ import { debounce } from '../utils/debounce';
 import { sanitizeFileName } from '../utils/string-utils';
 import { saveFile } from '../utils/file-utils';
 import { translatePage, getMessage, setupLanguageAndDirection } from '../utils/i18n';
+import { saveToAFFiNE } from '../utils/affine-note-creator';
 
 let loadedSettings: Settings;
 let currentTemplate: Template | null = null;
@@ -201,6 +202,8 @@ async function loadAndSetupTemplates() {
 	} else {
 		currentTemplate = templates[0];
 	}
+
+	currentTemplate.properties = []; // TODO: determine what to do with properties
 }
 
 function setupMessageListeners() {
@@ -280,6 +283,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 			// DOM-dependent initializations
 			updateVaultDropdown(loadedSettings.vaults);
 			populateTemplateDropdown();
+			populateMetadataDropdowns();
 			setupEventListeners(currentTabId);
 			await initializeUI();
 			setupMetadataToggle();
@@ -312,6 +316,38 @@ function setupEventListeners(tabId: number) {
 		});
 	}
 
+	const destinationDropdown = document.getElementById('destination-select') as HTMLSelectElement;
+	if (destinationDropdown) {
+		destinationDropdown.addEventListener('change', function(this: HTMLSelectElement) {
+			handleDestinationChange(this.value);
+		})
+	}
+
+	const cloudDestinationDropdown = document.getElementById('cloud-destination-select') as HTMLSelectElement;
+	if (cloudDestinationDropdown) {
+		let lastValue = cloudDestinationDropdown.value;
+		cloudDestinationDropdown.addEventListener('change', function(this: HTMLSelectElement) {
+			if (this.value === 'add-new') {
+				this.value = lastValue;
+				openNewDestinationDialog();
+			} else {
+				lastValue = this.value;
+				handleCloudDestinationChange(this.value);
+			}
+		})
+	}
+
+	const cloudDestinationDialogWrapper = document.getElementById('destination-dialog-wrapper') as HTMLDivElement;
+	if (cloudDestinationDialogWrapper) {
+		cloudDestinationDialogWrapper.addEventListener('click', function(e) {
+			if (e.target === cloudDestinationDialogWrapper) {
+				const clipperContainer = document.getElementById("destination-dialog-wrapper");
+				if (!clipperContainer) return;
+				clipperContainer.style.display = 'none';
+			}
+		})
+	}
+
 	const noteNameField = document.getElementById('note-name-field') as HTMLTextAreaElement;
 	if (noteNameField) {
 		noteNameField.addEventListener('input', () => adjustNoteNameHeight(noteNameField));
@@ -325,6 +361,13 @@ function setupEventListeners(tabId: number) {
 	const highlighterModeButton = document.getElementById('highlighter-mode');
 	if (highlighterModeButton) {
 		highlighterModeButton.addEventListener('click', () => toggleHighlighterMode(tabId));
+	}
+
+	const addServerButton = document.getElementById("add-server-btn") as HTMLButtonElement;
+	if (addServerButton) {
+		addServerButton.addEventListener("click", () => {
+			saveSelfHostedCloud();
+		})
 	}
 
 	const moreButton = document.getElementById('more-btn');
@@ -407,7 +450,7 @@ function setupEventListeners(tabId: number) {
 						
 						const shareData = {
 							files: [file],
-							text: 'Shared from Obsidian Web Clipper'
+							text: 'Shared from AFFiNE Web Clipper'
 						};
 
 						if (navigator.canShare(shareData)) {
@@ -607,8 +650,16 @@ async function handleClip() {
 			fileContent = noteContentField.value;
 		}
 
-		await saveToObsidian(fileContent, noteName, path, selectedVault, currentTemplate.behavior);
-		await incrementStat('addToObsidian', selectedVault, path);
+		// await saveToObsidian(fileContent, noteName, path, selectedVault, currentTemplate.behavior);
+		const currentCloud = (await getLocalStorage("currentCloudDestination")) || "affine-cloud"
+		await saveToAFFiNE({
+			title: noteName,
+			contentMarkdown: noteContentField.value,
+			contentHtml: noteContentField.value,
+			attachments: {},
+			workspace: (await getLocalStorage('workspaceDestination')) || "last-open-workspace",
+		}, currentCloud);
+		await incrementStat('addToAFFiNE', selectedVault, path);
 
 		// Only update lastSelectedVault if the user explicitly chose a vault
 		if (!currentTemplate.vault) {
@@ -617,9 +668,9 @@ async function handleClip() {
 		}
 
 		// Only close the window if it's not running in side panel mode
-		if (!isSidePanel) {
-			setTimeout(() => window.close(), 500);
-		}
+		// if (!isSidePanel) {
+		// 	setTimeout(() => window.close(), 500);
+		// }
 	} catch (error) {
 		console.error('Error in handleClip:', error);
 		showError('failedToSaveFile');
@@ -739,6 +790,29 @@ function populateTemplateDropdown() {
 	}
 }
 
+async function populateMetadataDropdowns() {
+	const destination = (await getLocalStorage('workspaceDestination')) || "last-open-workspace";
+	const destinationDropdown = document.getElementById('destination-select') as HTMLSelectElement;
+	if (destinationDropdown && destinationDropdown.value !== destination) {
+		destinationDropdown.value = destination;
+	}
+
+	const cloudDestinations = (await getLocalStorage('cloudDestinations')) || [];
+	const cloudDestinationsDropdown = document.getElementById('cloud-destination-select') as HTMLSelectElement;
+	if (cloudDestinationsDropdown) {
+		cloudDestinations.forEach((destination: string, idx: number) => {
+			const option = document.createElement('option');
+			option.value = `${destination}`
+			option.textContent = destination;
+			cloudDestinationsDropdown.appendChild(option);
+		})
+	}
+	const currentCloudDestination = (await getLocalStorage("currentCloudDestination")) || 'affine-cloud';
+	if (currentCloudDestination && cloudDestinationsDropdown) {
+		cloudDestinationsDropdown.value = currentCloudDestination;
+	}
+}
+
 async function initializeTemplateFields(currentTabId: number, template: Template | null, variables: { [key: string]: string }, noteName?: string, schemaOrgData?: any) {
 	if (!template) {
 		logError('No template selected');
@@ -843,7 +917,7 @@ async function initializeTemplateFields(currentTabId: number, template: Template
 		if (isDailyNote) {
 			pathField.style.display = 'none';
 		} else {
-			pathContainer.style.display = 'flex';
+			// pathContainer.style.display = 'flex';
 			let formattedPath = await memoizedCompileTemplate(currentTabId!, template.path, variables, currentTabId ? await browser.tabs.get(currentTabId).then(tab => tab.url || '') : '');
 			pathField.value = formattedPath;
 			pathField.setAttribute('data-template-value', template.path);
@@ -1013,6 +1087,43 @@ function handleTemplateChange(templateId: string) {
 	refreshFields(currentTabId!, false);
 }
 
+function handleDestinationChange(value: string) {
+	browser.storage.local.set({'workspaceDestination': value});
+}
+
+function handleCloudDestinationChange(value: string) {
+	browser.storage.local.set({'currentCloudDestination': value});
+}
+
+function openNewDestinationDialog() {
+	const clipperContainer = document.getElementById("destination-dialog-wrapper");
+	if (!clipperContainer) return;
+	clipperContainer.style.display = 'block';
+}
+
+function cloudDestinationIsValid(value: string) {
+	return true;
+}
+
+async function saveSelfHostedCloud() {
+	const currentCloudInput = document.getElementById("cloud-destination-input") as HTMLInputElement;
+	if (!currentCloudInput) return;
+	const cloudDestinationValue = currentCloudInput.value;
+	if (!cloudDestinationIsValid(cloudDestinationValue)) return;
+
+	const currentClouds = (await browser.storage.local.get("cloudDestinations"))?.cloudDestinations as string[] || [];
+	await browser.storage.local.set({
+		"cloudDestinations": [...currentClouds, cloudDestinationValue],
+		"currentCloudDestination": cloudDestinationValue,
+	});
+
+	await populateMetadataDropdowns();
+
+	const clipperContainer = document.getElementById("destination-dialog-wrapper");
+	if (!clipperContainer) return;
+	clipperContainer.style.display = 'none';
+}
+
 async function checkHighlighterModeState(tabId: number) {
 	try {
 		const result = await browser.storage.local.get('isHighlighterMode');
@@ -1083,7 +1194,7 @@ export async function copyToClipboard(content: string) {
 		// Change the main button text temporarily
 		const clipButton = document.getElementById('clip-btn');
 		if (clipButton) {
-			const originalText = clipButton.textContent || getMessage('addToObsidian');
+			const originalText = clipButton.textContent || getMessage('addToAFFiNE');
 			clipButton.textContent = getMessage('copied');
 			
 			// Reset the text after 1.5 seconds

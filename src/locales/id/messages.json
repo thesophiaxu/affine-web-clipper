@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Tambah penyedia"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Tambah ke Obsidian"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Simpan konten dari web dalam format yang bersifat privat dan tahan lama dan dapat diakses secara offline. Ekstensi browser resmi untuk Obsidian."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Gagal menyalin teks"

@@ -65,7 +65,7 @@ export interface Settings {
 	defaultPromptContext: string;
 	propertyTypes: PropertyType[];
 	stats: {
-		addToObsidian: number;
+		addToAFFiNE: number;
 		saveFile: number;
 		copyToClipboard: number;
 		share: number;
@@ -85,7 +85,7 @@ export interface ModelConfig {
 export interface HistoryEntry {
 	datetime: string;
 	url: string;
-	action: 'addToObsidian' | 'saveFile' | 'copyToClipboard' | 'share';
+	action: 'addToAFFiNE' | 'saveFile' | 'copyToClipboard' | 'share';
 	title?: string;
 	vault?: string;
 	path?: string;

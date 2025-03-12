@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Lisää palveluntarjoaja"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Lisää Obsidianiin"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Tallenna verkkosisältöä yksityisessä ja kestävässä muodossa, jota voit käyttää offline-tilassa. Obsidianin virallinen selainlaajennus."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Tekstin kopiointi epäonnistui"

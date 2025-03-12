@@ -21,7 +21,7 @@ export let generalSettings: Settings = {
 	defaultPromptContext: '',
 	propertyTypes: [],
 	stats: {
-		addToObsidian: 0,
+		addToAFFiNE: 0,
 		saveFile: 0,
 		copyToClipboard: 0,
 		share: 0
@@ -61,7 +61,7 @@ interface StorageData {
 	};
 	property_types?: PropertyType[];
 	stats?: {
-		addToObsidian: number;
+		addToAFFiNE: number;
 		saveFile: number;
 		copyToClipboard: number;
 		share: number;
@@ -108,7 +108,7 @@ interface LegacyStorageData {
 	interpreter_settings?: LegacyInterpreterSettings;
 	property_types?: PropertyType[];
 	stats?: {
-		addToObsidian: number;
+		addToAFFiNE: number;
 		saveFile: number;
 		copyToClipboard: number;
 		share: number;
@@ -230,7 +230,7 @@ export async function loadSettings(): Promise<Settings> {
 		defaultPromptContext: '',
 		propertyTypes: [],
 		stats: {
-			addToObsidian: 0,
+			addToAFFiNE: 0,
 			saveFile: 0,
 			copyToClipboard: 0,
 			share: 0

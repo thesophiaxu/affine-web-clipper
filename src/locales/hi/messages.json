@@ -17,7 +17,7 @@
 	"addProviderTitle": {
 		"message": "Provider jodein"
 	},
-	"addToObsidian": {
+	"addToAFFiNE": {
 		"message": "Obsidian me save karein"
 	},
 	"addVaultPlaceholder": {
@@ -257,7 +257,7 @@
 		"message": "Web se content ko ek private aur durable format mein save karein jise aap offline access kar sakte hain. Obsidian ka official browser extension."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AFFiNE Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Text copy karne mein fail"

@@ -1,9 +1,9 @@
 ---
 permalink: web-clipper/capture
 aliases:
-  - Obsidian Web Clipper/Capture web pages
+  - AFFiNE Web Clipper/Capture web pages
 ---
-Once you install the [[Introduction to Obsidian Web Clipper|Web Clipper]] browser extension, you can access it in several ways, depending on your browser:
+Once you install the [[Introduction to AFFiNE Web Clipper|Web Clipper]] browser extension, you can access it in several ways, depending on your browser:
 
 1. The Obsidian icon in your browser toolbar.
 2. Hotkeys, to activate the extension from your keyboard.
@@ -13,7 +13,7 @@ To save a page to Obsidian click the **Add to Obsidian** button.
 
 ## Capture a page
 
-When you open the extension, Web Clipper extracts data from the current web page following the settings in your [[Obsidian Web Clipper/Templates|template]]. You can create your own templates, and customize the output using [[variables]] and [[filters]].
+When you open the extension, Web Clipper extracts data from the current web page following the settings in your [[AFFiNE Web Clipper/Templates|template]]. You can create your own templates, and customize the output using [[variables]] and [[filters]].
 
 By default Web Clipper attempts to intelligently extract only the main article content, excluding other elements on the page. However, you can override this behavior in the following ways:
 
@@ -42,7 +42,7 @@ The Web Clipper interface is divided into four sections:
 
 Header functionality includes:
 
-- **Template** dropdown to switch between your saved [[Obsidian Web Clipper/Templates|templates]] added in Web Clipper settings.
+- **Template** dropdown to switch between your saved [[AFFiNE Web Clipper/Templates|templates]] added in Web Clipper settings.
 - **More (...)** button to display page variables you can use in templates.
 - **Highlighter** button to turn on [[Highlight web pages|highlighting]].
 - **Cog** button to open Web Clipper settings.

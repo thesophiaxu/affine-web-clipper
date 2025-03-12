@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html id="popup">
 	<head>
-		<title data-i18n="extensionName">Obsidian Web Clipper</title>
+		<title data-i18n="extensionName">AFFiNE Web Clipper</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="style.css">
 		<script src="browser-polyfill.min.js"></script>
 	</head>
 	<body id="popup-container">
-		<div id="popup-header">
+		<!-- <div id="popup-header">
 			<div id="template-container">
 				<select id="template-select">
 					<option value=""></option>
@@ -27,9 +27,10 @@
 					<i data-lucide="settings"></i>
 				</a>		
 			</div>
-		</div>
+		</div> -->
+		<div style="height: 10px;"></div>
 		<p class="error-message" style="display: none;"></p>
-		<div class="clipper">
+		<div id="clipper-container" class="clipper">
 			<textarea id="note-name-field" type="text" data-i18n="noteName" rows="1"></textarea>
 			<div class="metadata-properties-header">
 				<span data-i18n="properties">Properties</span>
@@ -40,11 +41,25 @@
 				<textarea id="note-content-field" rows="4" data-i18n="notesAboutPage"></textarea>
 			</div>
 			<div class="clipper-footer">
-				<div class="vault-path-container">
+				<div class="vault-path-container" style="display: none;">
 					<div id="vault-container" style="display: none;">
 						<select id="vault-select"></select>
 					</div>
 					<input id="path-name-field" type="text" data-i18n="folder"/>
+				</div>
+				<div style="display: flex; align-items: center;">
+					<span data-i18n="cloudDestination" style="min-width: 80px;">Cloud</span>
+					<select id="cloud-destination-select">
+						<option value="affine-cloud">AFFiNE Cloud</option>
+						<option value="add-new">Add new...</option>
+					</select>
+				</div>
+				<div style="display: flex; align-items: center;">
+					<span data-i18n="workspaceDestination" style="min-width: 80px;">Save to</span>
+					<select id="destination-select">
+						<option value="last-open-workspace">Current workspace</option>
+						<option value="select-by-user">Select at import</option>
+					</select>
 				</div>
 				<div id="interpreter" style="display: none;">
 					<textarea id="prompt-context" rows="3"></textarea>
@@ -57,7 +72,7 @@
 					<div id="interpreter-error" style="display: none;"></div>
 				</div>
 				<div class="action-buttons" id="action-buttons">
-					<button id="clip-btn" class="mod-cta" data-i18n="addToObsidian">Add to Obsidian</button>
+					<button id="clip-btn" class="mod-cta" data-i18n="addToAFFiNE">Add to AFFiNE</button>
 					<div class="menu-btn">
 						<button id="more-btn"><i data-lucide="chevron-down"></i></button>
 						<div class="menu" id="more-dropdown">
@@ -91,6 +106,15 @@
 						<a class="share-content clickable-icon" data-i18n-title="share"><i data-lucide="share"></i></a>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="destination-dialog-wrapper" id="destination-dialog-wrapper" style="display: none;">
+			<div id="destination-dialog-container" class="destination-dialog">
+				<span>Add self-hosted cloud</span>
+				<div style="height: 8px;"></div>
+				<input type="text" id="cloud-"></input>
+				<div style="height: 6px;"></div>
+				<button class="mod-cta" id="add-server-btn">Add server</button>
 			</div>
 		</div>
 		<script type="module" src="popup.js"></script>

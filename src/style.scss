@@ -81,3 +81,21 @@ pre, code {
 .is-hidden {
 	display: none !important;
 }
+
+.destination-dialog-wrapper {
+	position: absolute;
+	background: rgb(0 0 0 / 25%);
+	width: 100vw;
+	height: 100vh;
+}
+
+.destination-dialog {
+	width: 80%;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 8px;
+	background: white;
+	border-radius: 8px;
+
+}
