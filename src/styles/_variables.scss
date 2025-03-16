@@ -229,34 +229,15 @@
 		--background-modifier-cover: rgba(10, 10, 10, .4);
 		--background-modifier-hover: rgba(var(--mono-rgb-100), .15);
 
-		--color-accent-hsl:
-				var(--accent-h),
-				var(--accent-s),
-				var(--accent-l);
+		--color-accent-hsl: #1e96eb;
 
-		--color-accent:
-			hsl(
-				var(--accent-h),
-				var(--accent-s),
-				var(--accent-l));
+		--color-accent: #1e96eb;
 
-		--color-accent-1:
-			hsl(
-				calc(var(--accent-h) - 3),
-				calc(var(--accent-s) * 1.02),
-				calc(var(--accent-l) * 1.15));
+		--color-accent-1: #1e96eb;
 
-		--color-accent-2:
-			hsl(
-				calc(var(--accent-h) - 5),
-				calc(var(--accent-s) * 1.05),
-				calc(var(--accent-l) * 1.29));
+		--color-accent-2: #1e96eb;
 
-		--color-accent-3:
-			hsl(
-				calc(var(--accent-h) - 3),
-				calc(var(--accent-s) * 1.02),
-				calc(var(--accent-l) * 1.29));
+		--color-accent-3: #1e96eb;
 
 		--color-base-00: #1e1e1e;
 		--color-base-05: #212121;

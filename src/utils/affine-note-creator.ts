@@ -42,8 +42,10 @@ export function saveToAFFiNE(note: ClipperData, cloud: string) {
         if (iframe.contentWindow) {
             console.log("HI")
             window.addEventListener('message', message => {
-                console.log(message);
-                alert(JSON.stringify(message.data));
+                if (message.data.type === 'affine-clipper:import:success') {
+                    // alert('Successfully imported note to AFFiNE, closing...');
+                    window.close();
+                }
             }, false);
         }
     };
