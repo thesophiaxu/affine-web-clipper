@@ -104,6 +104,7 @@ const debouncedSetPopupDimensions = debounce(setPopupDimensions, 100); // 100ms 
 
 async function initializeExtension(tabId: number) {
 	try {
+		tabId = await browser.storage.local.get('lastSelectedTabId').then(result => result.lastSelectedTabId as number);
 		// Initialize translations
 		await translatePage();
 		
@@ -148,7 +149,7 @@ async function initializeExtension(tabId: number) {
 
 		updateVaultDropdown(loadedSettings.vaults);
 
-		const tab = await browser.tabs.get(tabId);
+		const tab = await browser.storage.local.get('lastSelectedTabId').then(result => browser.tabs.get(result.lastSelectedTabId as number));
 		if (!tab.url || isBlankPage(tab.url)) {
 			showError('pageCannotBeClipped');
 			return;
@@ -270,7 +271,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 	const tabs = await browser.tabs.query({active: true, currentWindow: true});
 	const currentTab = tabs[0];
-	currentTabId = currentTab?.id;
+	currentTabId = await browser.storage.local.get('lastSelectedTabId').then(result => result.lastSelectedTabId as number);
 
 	if (currentTabId) {
 		try {		

@@ -216,6 +216,19 @@ browser.contextMenus.onClicked.addListener(async (info, tab) => {
 	}
 });
 
+// Add listener for extension icon click
+browser.action.onClicked.addListener(async (tab) => {
+	// Open a window with the popup content
+	await browser.storage.local.set({ lastSelectedTabId: tab.id });
+	await browser.windows.create({
+	  url: 'popup.html',
+	  type: 'popup',
+	  width: 350,  // Set appropriate width
+	  height: 500, // Set appropriate height
+	  focused: true
+	});
+  }); 
+
 browser.runtime.onInstalled.addListener(() => {
 	debouncedUpdateContextMenu(-1); // Use a dummy tabId for initial creation
 });
